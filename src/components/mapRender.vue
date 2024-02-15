@@ -15,9 +15,9 @@ import { useGamesStore } from '@/stores/games';
 const { map, mapTiles } = defineProps(['map', 'mapTiles']);
 const gamesStore = useGamesStore();
 
-onMounted(async () => {
+onMounted( () => {
   // Charger les données depuis le localStorage de manière asynchrone
-  await gamesStore.loadFromLocalStorage();
+ gamesStore.loadFromLocalStorage();
 
   // Utiliser les coordonnées du startPoint comme centre initial de la carte
   if (gamesStore.startPoint && map && mapTiles) {
@@ -48,4 +48,5 @@ onMounted(async () => {
   }
 });
 </script>
+
 
